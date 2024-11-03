@@ -1,8 +1,12 @@
+import Contents from "@/components/Contents";
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
-    <main>
-      <h1>テストページ</h1>
-      <p>追加</p>
-    </main>
+    <>
+      <Hero imageOn />
+
+      <Contents />
+    </>
   );
 }
