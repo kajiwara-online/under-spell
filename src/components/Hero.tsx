@@ -4,7 +4,7 @@ import Image from "next/image";
 const MAINVISUAL = "/images/Mainvisual.png";
 
 interface HeroProps {
-  imageOn: boolean;
+  imageOn?: boolean;
 }
 
 const Hero = ({ imageOn = false }: HeroProps) => {
