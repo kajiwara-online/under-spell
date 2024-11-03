@@ -35,6 +35,13 @@ export const client = createClient({
   apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
 });
 
+// 型ガード関数を定義
+const isAxiosError = (
+  error: unknown
+): error is { response?: { status: number } } => {
+  return typeof error === "object" && error !== null && "response" in error;
+};
+
 // インフォメーション一覧を取得
 export const getInformation = async (queries?: Queries) => {
   try {
@@ -49,7 +56,7 @@ export const getInformation = async (queries?: Queries) => {
     return response;
   } catch (error) {
     console.error("Error fetching information:", error);
-    if (error.response?.status === 404) {
+    if (isAxiosError(error) && error.response?.status === 404) {
       notFound();
     } else {
       throw new Error("An unexpected error occurred.");
@@ -75,7 +82,7 @@ export const getInformationDetail = async (
     return response;
   } catch (error) {
     console.error(`Error fetching information with ID ${contentId}:`, error);
-    if (error.response?.status === 404) {
+    if (isAxiosError(error) && error.response?.status === 404) {
       notFound();
     } else {
       throw new Error("An unexpected error occurred.");
