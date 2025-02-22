@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/_components/Header";
+import Footer from "@/_components/Footer";
 import "./globals.css";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "UNDER SPELL",
   description: "UNDER SPELLのホームページ",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="ja">
       <body className="bg-white">
         <Header />
-
-        <main className="mt-16">{children}</main>
-
+        {children}
         <Footer />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

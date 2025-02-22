@@ -1,12 +1,33 @@
-import Contents from "@/components/Contents";
-import Hero from "@/components/Hero";
+import Aside from "@/_components/Aside";
+import Contents from "@/_components/Contents";
+import Hero from "@/_components/Hero";
 
-export default function Home() {
+import { TOP_INFORMATION_LIMIT } from "@/_constants";
+import { getAllInformation } from "@/_libs/client";
+
+const Home = async () => {
+  const [newsData, topicData] = await Promise.all([
+    getAllInformation({
+      // categoryがnewsのデータを取得
+      filters: "category[equals]news",
+      limit: TOP_INFORMATION_LIMIT,
+      orders: "-publishedAt", // 最新順
+    }),
+    getAllInformation({
+      // categoryがtopicのデータを取得
+      filters: "category[equals]topic",
+      limit: TOP_INFORMATION_LIMIT,
+      orders: "-publishedAt", // 最新順
+    }),
+  ]);
+
   return (
-    <>
+    <main>
       <Hero imageOn />
-
-      <Contents />
-    </>
+      <Contents newsData={newsData.contents} topicData={topicData.contents} />
+      <Aside />
+    </main>
   );
-}
+};
+
+export default Home;

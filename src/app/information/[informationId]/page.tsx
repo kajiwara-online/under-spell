@@ -1,44 +1,51 @@
 import Image from "next/image";
-import { formatDate } from "@/utils/date";
-import { getInformation, getInformationDetail } from "../../../../libs/client";
+import { formatDate } from "@/_utils/date";
+import Pagination from "@/_components/Pagination";
+import { getAllInformation } from "@/_libs/client";
 
-export async function generateStaticParams() {
-  const { contents } = await getInformation();
-
-  const paths = contents.map((information) => {
-    return {
-      informationId: information.id,
-    };
-  });
-  return [...paths];
-}
+export const revalidate = 60;
 
 const StaticDetailPage = async ({
   params: { informationId },
 }: {
   params: { informationId: string };
 }) => {
-  const information = await getInformationDetail(informationId);
+  const information = await getAllInformation();
 
-  if (!information) {
+  const informationDetail = information.contents.find(
+    (data) => data.id === informationId
+  );
+
+  if (!informationDetail) {
     return <p>コンテンツが見つかりませんでした。</p>;
   }
 
+  // 現在のIDを基に前後のIDを決定
+  const currentIndex = information.contents.findIndex(
+    (data) => data.id === informationId
+  );
+  const nextId =
+    currentIndex > 0 ? information.contents[currentIndex - 1].id : undefined;
+  const prevId =
+    currentIndex < information.contents.length - 1
+      ? information.contents[currentIndex + 1].id
+      : undefined;
+
   return (
-    <div className="p-28">
-      <div className="px-24 mb-14">
+    <article className="p-28">
+      <header className="px-24 mb-14">
         <p className="text-sm text-gray-400 mb-2">
-          {formatDate(information.publishedAt)}
-          {information.category[0]}
+          {formatDate(informationDetail.publishedAt || "")}
+          <span className="ml-2">{informationDetail.category.title}</span>
         </p>
-        <p className="text-2xl font-medium">{information.title}</p>
-      </div>
-      {information.eyecatch && (
+        <p className="text-2xl font-medium">{informationDetail.title}</p>
+      </header>
+      {informationDetail.thumbnail && (
         <Image
-          src={information.eyecatch.url}
-          alt={information.title}
-          height={information.eyecatch.height}
-          width={information.eyecatch.width}
+          src={informationDetail.thumbnail.url}
+          alt={informationDetail.title || "Information Image"}
+          height={informationDetail.thumbnail.height}
+          width={informationDetail.thumbnail.width}
           priority
           className="w-full h-4/5 object-cover rounded mb-8"
         />
@@ -48,11 +55,14 @@ const StaticDetailPage = async ({
         <div
           className="prose"
           dangerouslySetInnerHTML={{
-            __html: `${information.body}`,
+            __html: informationDetail.body || "",
           }}
         />
       </div>
-    </div>
+
+      <Pagination prevId={prevId} nextId={nextId} />
+    </article>
   );
 };
+
 export default StaticDetailPage;

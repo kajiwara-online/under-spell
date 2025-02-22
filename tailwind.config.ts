@@ -5,7 +5,7 @@ import aspectRatio from "@tailwindcss/aspect-ratio";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/_components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -31,6 +31,20 @@ const config: Config = {
             },
           },
         },
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "scale(95%)" },
+          "100%": { opacity: "1", transform: "scale(100%)" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1", transform: "scale(100%)" },
+          "100%": { opacity: "0", transform: "scale(95%)" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.3s ease-out forwards",
+        fadeOut: "fadeOut 0.3s ease-out forwards",
       },
     },
   },
