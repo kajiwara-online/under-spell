@@ -17,9 +17,18 @@ export type Information = {
   thumbnail?: MicroCMSImage;
 } & MicroCMSListContent;
 
+export type Recruit = {
+  title: string;
+  body: string;
+  location: string;
+  jobs: boolean;
+  thumbnail?: MicroCMSImage;
+} & MicroCMSListContent;
+
 export type PaginationProps = {
   prevId?: string;
   nextId?: string;
+  type: "information" | "recruit";
 };
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -48,6 +57,15 @@ export const getAllInformation = async (queries?: MicroCMSQueries) => {
 export const getAllCategory = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Category>({
     endpoint: "categories",
+    queries,
+  });
+
+  return listData;
+};
+
+export const getAllRecruit = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Recruit>({
+    endpoint: "recruit",
     queries,
   });
 

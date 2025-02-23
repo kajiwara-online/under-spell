@@ -1,15 +1,16 @@
 import { PaginationProps } from "@/_libs/client";
 import Link from "next/link";
 
-const Pagination = ({ prevId, nextId }: PaginationProps) => {
+const Pagination = ({ prevId, nextId, type }: PaginationProps) => {
+  // 動的にURLを生成
+  const nextUrl = nextId ? `/${type}/${nextId}` : undefined;
+  const prevUrl = prevId ? `/${type}/${prevId}` : undefined;
+
   return (
     <div className="flex justify-between items-center py-4 border-t mt-8">
       {/* 次の記事 */}
-      {nextId ? (
-        <Link
-          href={`/information/${nextId}`}
-          className="text-blue-500 hover:underline"
-        >
+      {nextUrl ? (
+        <Link href={nextUrl} className="text-blue-500 hover:underline">
           Next
         </Link>
       ) : (
@@ -17,11 +18,8 @@ const Pagination = ({ prevId, nextId }: PaginationProps) => {
       )}
 
       {/* 前の記事 */}
-      {prevId ? (
-        <Link
-          href={`/information/${prevId}`}
-          className="text-blue-500 hover:underline"
-        >
+      {prevUrl ? (
+        <Link href={prevUrl} className="text-blue-500 hover:underline">
           Prev
         </Link>
       ) : (

@@ -60,7 +60,7 @@ const StaticDetailPage = async ({
         />
       </div>
 
-      <Pagination prevId={prevId} nextId={nextId} />
+      <Pagination prevId={prevId} nextId={nextId} type="information" />
     </article>
   );
 };

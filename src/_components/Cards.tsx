@@ -22,8 +22,8 @@ const Cards = ({ information }: { information: Information[] }) => {
 
   return (
     <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
-      {filteredInformation.map((information) => (
-        <Card key={information.id} information={information} />
+      {filteredInformation.map((data) => (
+        <Card key={data.id} content={data} />
       ))}
     </ul>
   );
