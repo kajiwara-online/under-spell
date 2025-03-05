@@ -11,7 +11,7 @@ const Contents = ({
   newsData: Information[];
 }) => {
   return (
-    <div className="lg:pt-24 lg:px-28 lg:pb-40 md:pt-12 md:px-[calc(0.5rem+5vw)] md:pb-16 pt-[calc(1.25rem+9.5vw)] px-[calc(-0.5rem+9.5vw)] pb-[calc(2.25rem+13vw)]">
+    <div className="pt-[2.8125rem] pb-[4.375rem] px-[1.875rem] md:pt-[3.75rem] md:pb-20 md:px-[3.4375rem] lg:pt-[5.9375rem] lg:pb-40 lg:px-[10vw] lg:max-w-[1670px] lg:my-0 lg:mx-auto xl:pt-[5.688622754491018vw] xl:pb-[11.377245508982035vw] xl:px-[13.541666666666666vw]">
       <OurSalons />
       <Topic articles={topicData} />
       <News articles={newsData} />

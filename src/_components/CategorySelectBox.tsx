@@ -27,20 +27,17 @@ const CategorySelectBox = ({ categories }: { categories: Category[] }) => {
   );
 
   return (
-    <div className="flex items-center lg:mb-[70px] md:mb-[clamp(55px,7.3vw,70px)] mb-[clamp(43.75px,13.4vw,100px)]">
-      <label
-        htmlFor="category"
-        className="lg:pr-5 md:pr-[clamp(15.65px,2.1vw,1.25rem)]"
-      >
+    <div className="mb-[3.125rem] md:mb-[4.375rem] flex items-center">
+      <label htmlFor="category" className="w-[5.125rem] md:w-auto pr-5">
         Category:
       </label>
-      <div>
+      <div className="w-[14.5625rem] border-b border-[#ddd] relative overflow-hidden align-bottom text-[.8125rem] tracking-[.03em] leading-[2.769230769230769] md:w-40  after:content-[''] after:block after:absolute after:top-1/2 after:right-[.0625rem] after:mt-[-.21875rem] after:pointer-events-none after:w-[.5rem] after:h-[.4375rem] after:align-middle after:bg-no-repeat after:bg-center after:bg-contain after:bg-[url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2aWV3Qm94PScwIDAgOCA3JyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzcnPjxwYXRoIGQ9J200IDctMy44NzktN2g3Ljc1OHonIGZpbGw9JyNiMWIxYjEnLz48L3N2Zz4=')]">
         <select
           name="category"
           id="category"
           value={selectedCategory}
           onChange={handleChange}
-          className="w-40 border-b border-[#ddd] overflow-hidden"
+          className="font-[inherit] text-inherit text-[1em] py-[.4375rem] pr-8 pl-0 border-0 w-full bg-transparent appearance-none outline-none cursor-pointer"
         >
           <option value="">All</option>
           {categories.map((category) => (

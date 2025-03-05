@@ -16,8 +16,8 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="ja">
-      <body className="bg-white">
+    <html lang="ja" className="lg:text-[100%] md:text-[1.666666666666667vw]">
+      <body className="md:text-[.8125rem] leading-[2.153846153846154]">
         <Header />
         {children}
         <Footer />

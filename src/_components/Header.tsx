@@ -22,231 +22,186 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed bg-white top-0 left-0 w-full lg:h-20 md:h-[clamp(3rem,8vw,5rem)] h-[15vw] z-50">
-      <nav className="h-full w-full flex items-center justify-between md:px-12 md:py-5 px-[4vw] py-[2vw]">
-        <Link href="/" className="h-full flex items-center" aria-label="ホーム">
-          <figure className="h-full flex items-center">
+    <header className="fixed w-full h-[3.9375rem] top-0 left-0 z-[64] bg-[#fff] md:h-[4.375rem] lg:h-[5.1875rem]">
+      <div className="flex justify-between items-center py-[.6875rem] pr-[1.5rem] pl-[1.875rem] md:pt-[1.0625rem] md:pl-[1.5rem] md:pb-[1.0625rem] md:pr-[1.5625rem] lg:py-[1.25rem] lg:px-[2.8125rem]">
+        <div className="pt-[.3125rem]">
+          <Link
+            href="/"
+            className="w-[1.5rem] relative block md:w-[1.1875rem] lg:w-[1.875rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[83.33333333333334%]"
+            aria-label="ホーム"
+          >
             <Image
-              src="/images/HeaderLogo.png"
+              src="/images/logo.svg"
               alt="ヘッダーロゴ"
-              width={350}
-              height={250}
-              className="h-full w-full min-h-[10px] min-w-[14px] max-h-[45px] max-w-[63px]"
+              fill
+              className="object-contain"
             />
-          </figure>
-        </Link>
+          </Link>
+        </div>
 
-        <div className="h-full flex items-center">
-          <ul className="hidden lg:flex items-center space-x-8">
+        <div className="flex justify-between items-center">
+          <ul className="hidden text-[.8125rem] tracking-[.03em] leading-[2] mr-[3.375rem] lg:flex">
             <li>
               <Link href="/" className="">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/salon" className="">
+              <Link href="/salons/" className="ml-[2.5rem]">
                 Salon
               </Link>
             </li>
             <li>
-              <Link href="/hairmake" className="">
+              <Link href="/hairmake/" className="ml-[2.5rem]">
                 Hairmake
               </Link>
             </li>
             <li>
-              <Link href="/information" className="">
+              <Link href="/information/" className="ml-[2.5rem]">
                 Information
               </Link>
             </li>
             <li>
-              <Link href="/recruit" className="">
+              <Link href="/recruit/" className="ml-[2.5rem]">
                 Recruit
               </Link>
             </li>
           </ul>
           <Link
-            href="/reservation"
-            className="h-auto text-[clamp(5px,3.7vw,1.5rem)] md:border border-gray-300 px-6 py-2 max-md:p-0 mx-14 max-md:ml-0 max-md:mr-[2.5vw] lg:text-[1rem] md:text-[clamp(0.5rem,1.5vw,1rem)]"
+            href="/reserve/"
+            className="flex justify-center items-center md:border md:border-[#ddd] w-full h-auto mr-3 text-[.875rem] tracking-[.02em] leading-[1.142857142857143] md:leading-none md:mr-[3.6875rem] md:w-[8.75rem] md:h-[2.6875rem] md:text-[.8125rem]"
           >
             Reservation
           </Link>
 
-          <div className="h-full">
-            <button
-              className="h-full block"
+          <div className="w-[.9375rem] h-[1rem] cursor-pointer relative">
+            <Image
+              src="/images/menu.svg"
+              alt=""
+              fill
+              className="object-contain"
               onClick={toggleNavbar}
               aria-label="メニューを開く"
+            />
+          </div>
+
+          {/* オーバーレイメニュー */}
+          {(openMenu || isAnimating) && (
+            <div
+              className={`bg-[#fff] fixed z-128 top-0 left-0 w-full h-full ${
+                openMenu && isAnimating
+                  ? "animate-fadeIn"
+                  : !openMenu && isAnimating
+                  ? "animate-fadeOut"
+                  : ""
+              }`}
             >
-              <svg
-                className="h-full w-full max-h-[25px] max-w-[25px] min-h-[8px] min-w-[8px]"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </button>
-
-            {/* オーバーレイメニュー */}
-            {(openMenu || isAnimating) && (
-              <div
-                className={`fixed inset-0 bg-white z-50 flex ${
-                  openMenu && isAnimating
-                    ? "animate-fadeIn"
-                    : !openMenu && isAnimating
-                    ? "animate-fadeOut"
-                    : ""
-                }`}
-              >
-                <div className="h-full w-1/2">
-                  <Image
-                    src="/images/menu.jpg"
-                    alt="メニューイメージ"
-                    width={1400}
-                    height={1518}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-
-                <div className="flex justify-center items-center h-full w-1/2 relative">
-                  <button
-                    className="absolute top-7 right-10"
-                    onClick={toggleNavbar}
-                    aria-label="メニューを閉じる"
-                  >
-                    <svg
-                      className="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+              <div className="md:flex md:flex-row-reverse md:h-full">
+                <div className="relative pt-[5.375rem] px-[1.875rem] pb-[2.5rem] md:flex md:justify-center md:items-center md:min-w-[40.625rem] md:w-1/2 md:h-full md:p-[3.4375rem] ">
+                  <div className="absolute top-[1.5rem] left-[1.875rem] md:hidden">
+                    <Link
+                      href="/"
+                      className="w-6 relative block lg:w-[1.9375rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[83.33333333333334%] md:before:hidden"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
+                      <Image
+                        src="/images/logo.svg"
+                        alt="ヘッダーロゴ"
+                        fill
+                        className="object-contain"
                       />
-                    </svg>
-                  </button>
-                  <div className="w-3/5">
-                    <div className="flex justify-between">
-                      <ul className="flex flex-col gap-2">
+                    </Link>
+                  </div>
+                  <div className="w-[.9375rem] h-4 cursor-pointer absolute top-6 right-[1.4375rem] md:top-[2.0625rem] md:right-[2.875rem]">
+                    <Image
+                      src="/images/close.svg"
+                      alt="閉じる"
+                      fill
+                      className="object-contain"
+                      onClick={toggleNavbar}
+                    />
+                  </div>
+                  <div className="md:w-[20.875rem]">
+                    <nav className="flex md:justify-between">
+                      <ul className="pr-[3.375rem] text-[1rem] tracking-[.03em] leading-[1.3125] text-[#222] md:text-[1.375rem] md:tracking-[.06em] md:leading-[1.272727272727273] md:p-0">
                         <li>
-                          <Link
-                            href="/"
-                            className="text-2xl hover:underline block"
-                          >
+                          <Link href="/" className="hidden md:block">
                             Home
                           </Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/salon"
-                            className="text-2xl hover:underline block"
-                          >
-                            Salon
-                          </Link>
+                        <li className="m-0 md:mt-5">
+                          <Link href="/salons/">Salon</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/hairmake"
-                            className="text-2xl hover:underline block"
-                          >
-                            Hairmake
-                          </Link>
+                        <li className="mt-[.625rem] md:mt-5">
+                          <Link href="/hairmake/">Hairmake</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/information"
-                            className="text-2xl hover:underline block"
-                          >
-                            Information
-                          </Link>
+                        <li className="mt-[.625rem] md:mt-5">
+                          <Link href="/information/">Information</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/recruit"
-                            className="text-2xl hover:underline block"
-                          >
-                            Recruit
-                          </Link>
+                        <li className="mt-[.625rem] md:mt-5">
+                          <Link href="/recruit/">Recruit</Link>
                         </li>
                       </ul>
-                      <ul className="flex flex-col gap-4">
+                      <ul className="pr-[3.375rem] text-[.6875rem] tracking-[.06em] leading-[1.272727272727273] text-[#999] md:text-[.8125rem] md:tracking-[.06em] md:leading-[1.230769230769231] md:p-0">
                         <li>
-                          <Link
-                            href="/nailschool"
-                            className="text-sm text-gray-400 hover:underline block"
-                          >
-                            Nail School
-                          </Link>
+                          <Link href="/nailschool/">Nail School</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/bridal"
-                            className="text-sm text-gray-400 hover:underline block"
-                          >
-                            Bridal + LIM
-                          </Link>
+                        <li className="md:mt-3 mt-[.625rem]">
+                          <Link href="/bridal/">Bridal + LIM</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/company"
-                            className="text-sm text-gray-400 hover:underline block"
-                          >
-                            Company
-                          </Link>
+                        <li className="md:mt-[1.8125rem] mt-5">
+                          <Link href="/company/">Company</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/overseas"
-                            className="text-sm text-gray-400 hover:underline block"
-                          >
-                            Overseas
-                          </Link>
+                        <li className="md:mt-3 mt-[.625rem]">
+                          <Link href="/overseas/">Overseas</Link>
                         </li>
-                        <li>
-                          <Link
-                            href="/policy"
-                            className="text-sm text-gray-400 hover:underline block"
-                          >
-                            Privacy policy
-                          </Link>
+                        <li className="md:mt-[1.8125rem] mt-5">
+                          <Link href="/policy/">Privacy policy</Link>
                         </li>
                       </ul>
+                    </nav>
+                    <div className="text-[.6875rem] tracking-[.02em] leading-[1.272727272727273] text-[#222] mt-12 md:mt-[5.625rem]">
+                      <div className="text-[.75rem] tracking-[.04em] leading-[1.166666666666667] mb-[.90625rem] md:text-[.8125rem] md:mb-[1.03125rem]">
+                        For new customer
+                      </div>
+                      <div>
+                        <p>
+                          <Link href="/hajimete/">
+                            始めてヘアサロンをご利用の方へ
+                          </Link>
+                        </p>
+                        <p className="mt-[.78125rem] md:mt-[.90625rem]">
+                          <Link href="/hajimete/nail/">
+                            始めてネイル・アイラッシュサロンをご利用の方へ
+                          </Link>
+                        </p>
+                        <p className="mt-[.78125rem] md:mt-[.90625rem]">
+                          <Link href="/hajimete/espa/">
+                            始めてエスパサロンをご利用の方へ
+                          </Link>
+                        </p>
+                      </div>
                     </div>
-                    <div className="mt-20 text-sm">
-                      <div className="mb-3">For new customer</div>
-                      <p className="underline hover:no-underline mb-2">
-                        <Link href="/hajimete">
-                          始めてヘアサロンをご利用の方へ
-                        </Link>
-                      </p>
-                      <p className="underline hover:no-underline mb-2">
-                        <Link href="/hajimete/nail">
-                          始めてネイル・アイラッシュサロンをご利用の方へ
-                        </Link>
-                      </p>
-                      <p className="underline hover:no-underline mb-2">
-                        <Link href="/hajimete/espa">
-                          始めてエスパサロンをご利用の方へ
-                        </Link>
-                      </p>
-                    </div>
+                    <Link
+                      href="/reserve/"
+                      className="flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full h-[3.875rem] mt-[2.40625rem] md:hidden"
+                    >
+                      Reservation
+                    </Link>
                   </div>
                 </div>
+                <div className="hidden md:block md:relative md:flex-[1_1_auto] lg:w-1/2 lg:flex-auto">
+                  <Image
+                    src="/images/menu.jpg"
+                    alt="メニューイメージ"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

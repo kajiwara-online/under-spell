@@ -9,6 +9,11 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      md: "751px",
+      lg: "961px",
+      xl: "1351px",
+    },
     extend: {
       colors: {
         background: "var(--background)",

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const SALONS = [
   { src: "/images/ourSalonsLogo/logo_0_0.png", alt: "Logo 1" },
@@ -21,26 +22,28 @@ const SALONS = [
 const OurSalons = () => {
   return (
     <div className="text-center">
-      <h2 className="md:text-sm text-[clamp(5px,3.7vw,1.5rem)]">OUR SALONS</h2>
-      <div className="max-w-[1080px] mx-auto md:mt-7 md:mb-12 mt-[clamp(26px,8vw,4rem)] mb-[clamp(22px,7vw,3.5rem)]">
-        <div className="flex flex-wrap mt-[-1.666666666666667%] ml-[-1.666666666666667%]">
+      <h2 className="text-[.8125rem] tracking-[.06em] leading-[1.230769230769231]">
+        OUR SALONS
+      </h2>
+      <div className="mt-[1.875rem] mb-[2.5625rem] mx-0 md:mt-[1.875rem] md:mb-[3rem] md:mx-auto max-w-[1080px]">
+        <div className="flex flex-wrap mt-[-.5625rem] ml-[-.5625rem] md:mt-[-1.666666666666667%] md:ml-[-1.666666666666667%]">
           {SALONS.map((salon, index) => (
-            <figure
+            <Link
               key={index}
-              className="md:w-[15.027322404371585%] w-[31.693989071038%] mt-[1.639344262295082%] ml-[1.639344262295082%] relative block border border-[#ddd] before:content-[''] before:block before:w-full before:h-0 before:pb-[44.84848484848485%]"
+              href="/"
+              className="block border border-[#ddd] w-[6.1875rem] mt-[.5625rem] ml-[.5625rem] relative md:mt-[1.639344262295082%] md:ml-[1.639344262295082%] md:w-[15.027322404371585%] before:content-[''] before:block before:w-full before:h-0 before:pb-[44.44444444444444%] md:before:pb-[44.84848484848485%]"
             >
-              <div className="flex justify-center items-center h-full w-full absolute top-0 left-0">
-                <div className="w-[2.5625rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[51.724137931034484%]">
+              <div className="flex justify-center items-center absolute top-0 left-0 w-full h-full">
+                <div className="block relative overflow-hidden w-6 md:w-[2.5625rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[51.724137931034484%]">
                   <Image
                     src={salon.src}
                     alt={salon.alt}
-                    layout="fill"
-                    objectFit="contain"
-                    className="absolute top-0 left-0 w-full h-full"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>
-            </figure>
+            </Link>
           ))}
         </div>
       </div>

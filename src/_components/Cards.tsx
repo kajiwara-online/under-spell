@@ -8,7 +8,6 @@ import { Information } from "@/_libs/client";
 const Cards = ({ information }: { information: Information[] }) => {
   const searchParams = useSearchParams();
   const currentCategory = searchParams.get("category") || "";
-  // console.log(`URLのcategoryパラメータ: ${currentCategory}`);
 
   // カテゴリフィルタリング
   const filteredInformation = useMemo(() => {
@@ -21,7 +20,7 @@ const Cards = ({ information }: { information: Information[] }) => {
   // );
 
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+    <ul className="md:flex md:flex-wrap md:mt-[-6.481481481481481%] md:ml-[-2.777777777777778%] cards">
       {filteredInformation.map((data) => (
         <Card key={data.id} content={data} />
       ))}

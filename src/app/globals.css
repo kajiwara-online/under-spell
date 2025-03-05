@@ -2,15 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    /* font-feature-settings: "palt" 1; */
-    height: 100%;
-    min-width: 320px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    background-color: #fff;
-    color: #222;
-    /* visibility: hidden; */
-    /* font-size: 4.266666666666667vw; */
+@layer base {
+    :where(:root) {
+        cursor: default;
+        line-height: 1.5;
+        overflow-wrap: break-word;
+        tab-size: 4;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    html {
+        /* font-feature-settings: "palt" 1; */
+        height: 100%;
+        min-width: 320px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        background-color: #fff;
+        color: #222;
+        /* visibility: hidden; */
+        font-size: 4.266666666666667vw;
+    }
+
+    body {
+        font-size: .75rem;
+        letter-spacing: .01em;
+        line-height: 2;
+    }
+
+    :where(body) {
+        margin: 0;
+    }
+
+    ::after,
+    ::before {
+        box-sizing: border-box;
+        text-decoration: inherit;
+        vertical-align: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin: 0;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    :where(small) {
+        font-size: 80%;
+    }
+
+    .c_inr> :first-child {
+        margin-top: 0;
+    }
+
+    @media only screen and (max-width: 750px) {
+        .cards>li+li {
+            margin-top: 3.125rem;
+        }
+    }
 }
