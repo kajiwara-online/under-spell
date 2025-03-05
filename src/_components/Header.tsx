@@ -108,6 +108,7 @@ const Header = () => {
                         alt="ヘッダーロゴ"
                         fill
                         className="object-contain"
+                        onClick={toggleNavbar}
                       />
                     </Link>
                   </div>
@@ -124,38 +125,59 @@ const Header = () => {
                     <nav className="flex md:justify-between">
                       <ul className="pr-[3.375rem] text-[1rem] tracking-[.03em] leading-[1.3125] text-[#222] md:text-[1.375rem] md:tracking-[.06em] md:leading-[1.272727272727273] md:p-0">
                         <li>
-                          <Link href="/" className="hidden md:block">
+                          <Link
+                            href="/"
+                            className="hidden md:block onClick={toggleNavbar}"
+                          >
                             Home
                           </Link>
                         </li>
                         <li className="m-0 md:mt-5">
-                          <Link href="/salons/">Salon</Link>
+                          <Link href="/salons/" onClick={toggleNavbar}>
+                            Salon
+                          </Link>
                         </li>
                         <li className="mt-[.625rem] md:mt-5">
-                          <Link href="/hairmake/">Hairmake</Link>
+                          <Link href="/hairmake/" onClick={toggleNavbar}>
+                            Hairmake
+                          </Link>
                         </li>
                         <li className="mt-[.625rem] md:mt-5">
-                          <Link href="/information/">Information</Link>
+                          <Link href="/information/" onClick={toggleNavbar}>
+                            Information
+                          </Link>
                         </li>
                         <li className="mt-[.625rem] md:mt-5">
-                          <Link href="/recruit/">Recruit</Link>
+                          <Link href="/recruit/ onClick={toggleNavbar}">
+                            Recruit
+                          </Link>
                         </li>
                       </ul>
                       <ul className="pr-[3.375rem] text-[.6875rem] tracking-[.06em] leading-[1.272727272727273] text-[#999] md:text-[.8125rem] md:tracking-[.06em] md:leading-[1.230769230769231] md:p-0">
                         <li>
-                          <Link href="/nailschool/">Nail School</Link>
+                          <Link href="/nailschool/" onClick={toggleNavbar}>
+                            Nail School
+                          </Link>
                         </li>
                         <li className="md:mt-3 mt-[.625rem]">
-                          <Link href="/bridal/">Bridal + LIM</Link>
+                          <Link href="/bridal/" onClick={toggleNavbar}>
+                            Bridal + LIM
+                          </Link>
                         </li>
                         <li className="md:mt-[1.8125rem] mt-5">
-                          <Link href="/company/">Company</Link>
+                          <Link href="/company/" onClick={toggleNavbar}>
+                            Company
+                          </Link>
                         </li>
                         <li className="md:mt-3 mt-[.625rem]">
-                          <Link href="/overseas/">Overseas</Link>
+                          <Link href="/overseas/" onClick={toggleNavbar}>
+                            Overseas
+                          </Link>
                         </li>
                         <li className="md:mt-[1.8125rem] mt-5">
-                          <Link href="/policy/">Privacy policy</Link>
+                          <Link href="/policy/" onClick={toggleNavbar}>
+                            Privacy policy
+                          </Link>
                         </li>
                       </ul>
                     </nav>
@@ -165,17 +187,17 @@ const Header = () => {
                       </div>
                       <div>
                         <p>
-                          <Link href="/hajimete/">
+                          <Link href="/hajimete/" onClick={toggleNavbar}>
                             始めてヘアサロンをご利用の方へ
                           </Link>
                         </p>
                         <p className="mt-[.78125rem] md:mt-[.90625rem]">
-                          <Link href="/hajimete/nail/">
+                          <Link href="/hajimete/nail/" onClick={toggleNavbar}>
                             始めてネイル・アイラッシュサロンをご利用の方へ
                           </Link>
                         </p>
                         <p className="mt-[.78125rem] md:mt-[.90625rem]">
-                          <Link href="/hajimete/espa/">
+                          <Link href="/hajimete/espa/" onClick={toggleNavbar}>
                             始めてエスパサロンをご利用の方へ
                           </Link>
                         </p>
@@ -184,6 +206,7 @@ const Header = () => {
                     <Link
                       href="/reserve/"
                       className="flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full h-[3.875rem] mt-[2.40625rem] md:hidden"
+                      onClick={toggleNavbar}
                     >
                       Reservation
                     </Link>
