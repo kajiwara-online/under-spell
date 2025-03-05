@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import Spinner from "@/_components/common/Spinner";
 import Cards from "@/_components/Cards";
 import CategorySelectBox from "@/_components/CategorySelectBox";
 import { getAllCategory, getAllInformation } from "@/_libs/client";
@@ -5,11 +7,9 @@ import { getAllCategory, getAllInformation } from "@/_libs/client";
 const InformationHome = async () => {
   const [categories, information] = await Promise.all([
     getAllCategory({
-      // 全てのカテゴリーを取得
       orders: "-publishedAt", // 最新順
     }),
     getAllInformation({
-      // 全てのインフォメーションを取得
       limit: 100,
       orders: "-publishedAt", // 最新順
     }),
@@ -27,7 +27,9 @@ const InformationHome = async () => {
           </h1>
         </header>
         <CategorySelectBox categories={categories.contents} />
-        <Cards information={information.contents} />
+        <Suspense fallback={<Spinner />}>
+          <Cards information={information.contents} />
+        </Suspense>
       </main>
     </div>
   );
