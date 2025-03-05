@@ -1,8 +1,8 @@
 // import Image from "next/image";
 
 const MAINVISUAL_L = "/images/mainvisual.l.png";
-const MAINVISUAL_M = "/images/Mainvisual.m.png";
-const MAINVISUAL_SP = "/images/Mainvisual.sp.png";
+const MAINVISUAL_M = "/images/mainvisual.m.png";
+const MAINVISUAL_SP = "/images/mainvisual.sp.png";
 
 interface HeroProps {
   imageOn?: boolean;
