@@ -127,7 +127,8 @@ const Header = () => {
                         <li>
                           <Link
                             href="/"
-                            className="hidden md:block onClick={toggleNavbar}"
+                            className="hidden md:block"
+                            onClick={toggleNavbar}
                           >
                             Home
                           </Link>
@@ -148,7 +149,7 @@ const Header = () => {
                           </Link>
                         </li>
                         <li className="mt-[.625rem] md:mt-5">
-                          <Link href="/recruit/ onClick={toggleNavbar}">
+                          <Link href="/recruit/" onClick={toggleNavbar}>
                             Recruit
                           </Link>
                         </li>
