@@ -28,7 +28,9 @@ const InformationHome = async () => {
             INFORMATION
           </h1>
         </header>
-        <CategorySelectBox categories={categories.contents} />
+        <Suspense fallback={<Spinner />}>
+          <CategorySelectBox categories={categories.contents} />
+        </Suspense>
         <Suspense fallback={<Spinner />}>
           <Cards information={information.contents} />
         </Suspense>
