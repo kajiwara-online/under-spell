@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Home() {
+const HairmakeHome = () => {
   return (
     <div className="pt-[3.9375rem] md:pt-[4.375rem] lg:pt-[5.1875rem]">
-      <main className="pt-[2.875rem] pb-20 px-[1.875rem] md:text-[.8125rem] md:leading-loose md:pt-[3.75rem] md:pb-[3.4375rem] md:px-20 lg:grid lg:grid-rows-[auto_auto_auto] lg:grid-cols-[743fr_102fr_235fr] lg:relative lg:max-w-[1670px] lg:pt-[4.6875rem] lg:pb-[9.375rem] lg:px-[10vw] lg:my-0 lg:mx-auto xl:pt-[5.688622754491018vw] xl:pb-[11.377245508982035vw] xl:px-[13.541666666666666vw]">
+      <main className="pt-[2.875rem] pb-20 px-[1.875rem] md:text-[.8125rem] md:leading-loose md:pt-[3.75rem] md:pb-20 md:px-[3.4375rem] lg:grid lg:grid-rows-[auto_auto_auto] lg:grid-cols-[743fr_102fr_235fr] lg:relative lg:max-w-[1670px] lg:pt-[4.6875rem] lg:pb-[9.375rem] lg:px-[10vw] lg:my-0 lg:mx-auto xl:pt-[5.688622754491018vw] xl:pb-[11.377245508982035vw] xl:px-[13.541666666666666vw]">
         <header className="row-[1/2] col-[1/4] mb-[1.65625rem] md:flex md:items-baseline md:mb-[3.4375rem]">
           <h1 className="text-[1.5rem] tracking-[.04em] leading-[1.291666666666667] md:text-[2.25rem] md:leading-[1.277777777777778]">
             Hairmake
@@ -157,4 +157,6 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
+
+export default HairmakeHome;
