@@ -1,4 +1,3 @@
-import ContactForm from "@/_components/ContactForm";
 import Link from "next/link";
 
 const CompanyHome = () => {
