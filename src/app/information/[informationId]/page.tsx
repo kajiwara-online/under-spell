@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { formatDate } from "@/_utils/date";
 import Pagination from "@/_components/Pagination";
+import { formatDate } from "@/_utils/date";
 import { getAllInformation } from "@/_libs/client";
 
 export const revalidate = 60;
@@ -62,7 +62,7 @@ const StaticDetailPage = async ({
               </div>
             </figure>
           )}
-          <div className="px-24">
+          <div>
             <div
               className="prose"
               dangerouslySetInnerHTML={{

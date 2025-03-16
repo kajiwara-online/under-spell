@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const HairmakeHome = () => {
   return (
@@ -19,14 +22,19 @@ const HairmakeHome = () => {
           </p>
         </header>
         <div className="row-[2/3] col-[1/2]">
-          <picture className="relative block mb-[2.125rem] mx-[-.625rem] lg:mb-[3.34375rem] lg:mx-0 before:content-[''] before:block before:w-full before:h-0 before:pb-[56.527590847913864%]">
+          <motion.picture
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative block mb-[2.125rem] mx-[-.625rem] lg:mb-[3.34375rem] lg:mx-0 before:content-[''] before:block before:w-full before:h-0 before:pb-[56.527590847913864%]"
+          >
             <source media="(min-width: 751px)" srcSet="/images/hairmake.jpg" />
             <img
               src="/images/hairmake-750x424.jpg"
               alt="Hairmake+LIM"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </picture>
+          </motion.picture>
           <div>
             <p>
               LIMでは雑誌・CM・広告・カタログ・アーティストなど幅広くヘアメイクのお仕事に携わらせて頂いています。
@@ -41,14 +49,20 @@ const HairmakeHome = () => {
             <h3 className="border-b border-[#ddd] text-[.875rem] tracking-[.03em] leading-[1.214285714285714] mb-5 md:text-[1rem] md:tracking-[.03em] md:leading-[1.0625] md:pb-[.888888888888889em]">
               CM & ADVERTISING & OTHER
             </h3>
-            <picture className="block relative overflow-hidden my-[1.875rem] md:mt-[3.75rem] md:mb-[3.125rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[56.451612903225815%]">
+            <motion.picture
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="block relative overflow-hidden my-[1.875rem] md:mt-[3.75rem] md:mb-[3.125rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[56.451612903225815%]"
+            >
               <source media="(min-width: 751px)" srcSet="/images/0.l.jpg" />
               <img
                 src="/images/0.jpg"
                 alt=""
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
-            </picture>
+            </motion.picture>
             <h4 className="text-[.8125rem] tracking-[.06em] leading-none mt-[1.875rem] mb-[.5625rem] md:text-[1rem] md:tracking-[.03em] md:mt-10 md:mb-[.75rem]">
               Magazine/Catalogue/Advertising
             </h4>
@@ -103,14 +117,20 @@ const HairmakeHome = () => {
             <h3 className="border-b border-[#ddd] text-[.875rem] tracking-[.03em] leading-[1.214285714285714] mb-5 md:text-[1rem] md:tracking-[.03em] md:leading-[1.0625] md:pb-[.888888888888889em]">
               BRIDAL
             </h3>
-            <picture className="block relative overflow-hidden my-[1.875rem] md:mt-[3.75rem] md:mb-[3.125rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[56.527590847913864%]">
+            <motion.picture
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="block relative overflow-hidden my-[1.875rem] md:mt-[3.75rem] md:mb-[3.125rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[56.527590847913864%]"
+            >
               <source media="(min-width: 751px)" srcSet="/images/1.l.jpg" />
               <img
                 src="/images/1.jpg"
                 alt=""
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
-            </picture>
+            </motion.picture>
             <p>
               LIMではブライダルヘアメイクも行なっております。私たちLIMが手がけるブライダルヘアメイクは、ただヘアメイクをさせていただくだけではなく、お二人にとって、ご家族にとって、ご友人にとってどのような時間になれば喜んでいただけるかを目一杯考えさせていただきます。
             </p>

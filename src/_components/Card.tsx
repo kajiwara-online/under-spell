@@ -1,6 +1,9 @@
-import { Information, Recruit } from "@/_libs/client";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { Information, Recruit } from "@/_libs/client";
+import { motion } from "framer-motion";
 
 type InfoOrRecruit = Information | Recruit;
 
@@ -25,7 +28,17 @@ const Card = ({ content }: { content: InfoOrRecruit }) => {
   }
 
   return (
-    <li className="md:w-[30.630630630630627%] md:pt-[6.306306306306306%] md:ml-[2.702702702702703%]">
+    <motion.li
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      whileHover={{
+        opacity: 0.7,
+        transition: { duration: 0.2 },
+      }}
+      className="md:w-[30.630630630630627%] md:pt-[6.306306306306306%] md:ml-[2.702702702702703%]"
+    >
       <Link href={linkHref} className="block">
         <div className="block relative overflow-hidden mb-[.8125rem] md:md-[.9375rem] before:content-[''] before:block before:w-full before:h-0 before:pb-[60.317460317460316%] md:before:pb-[60.588235294117645%]">
           <Image
@@ -52,7 +65,7 @@ const Card = ({ content }: { content: InfoOrRecruit }) => {
           </div>
         )}
       </Link>
-    </li>
+    </motion.li>
   );
 };
 

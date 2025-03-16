@@ -1,8 +1,8 @@
 "use client";
 
+import Card from "./Card";
 import { useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import Card from "./Card";
 import { Information } from "@/_libs/client";
 
 const Cards = ({ information }: { information: Information[] }) => {

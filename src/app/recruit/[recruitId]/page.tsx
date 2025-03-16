@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { formatDate } from "@/_utils/date";
 import Pagination from "@/_components/Pagination";
 import { getAllRecruit } from "@/_libs/client";
@@ -48,7 +48,7 @@ const StaticDetailPage = async ({
           </h1>
         </header>
         <div className="md:text-[.875rem] md:leading-[2.142857142857143] md:max-w-[1080px] md:my-0 md:mx-auto md:py-0 md:px-[10vw] xl:py-0 xl:px-[135px] c_inr">
-          {recruitDetail.thumbnail && (
+          {/* {recruitDetail.thumbnail && (
             <figure className="my-[3.125rem] mx-0 md:my-20 md:mx-[-10vw] xl:my-[80px] xl:mx-[-135px]">
               <div className="relative block w-full h-0 pb-[62.55033557047%]">
                 <Image
@@ -59,8 +59,8 @@ const StaticDetailPage = async ({
                 />
               </div>
             </figure>
-          )}
-          <div className="px-24">
+          )} */}
+          <div>
             <div
               className="prose"
               dangerouslySetInnerHTML={{
@@ -74,36 +74,6 @@ const StaticDetailPage = async ({
         </footer>
       </article>
     </div>
-    // <article className="p-28">
-    //   <header className="px-24 mb-14">
-    //     <p className="text-sm text-gray-400 mb-2">
-    //       {formatDate(recruitDetail.publishedAt || "")}
-    //       <span className="ml-2">{recruitDetail.location}</span>
-    //     </p>
-    //     <p className="text-2xl font-medium">{recruitDetail.title}</p>
-    //   </header>
-    //   {recruitDetail.thumbnail && (
-    //     <Image
-    //       src={recruitDetail.thumbnail.url}
-    //       alt={recruitDetail.title || "Recruit Image"}
-    //       height={recruitDetail.thumbnail.height}
-    //       width={recruitDetail.thumbnail.width}
-    //       priority
-    //       className="w-full h-4/5 object-cover rounded mb-8"
-    //     />
-    //   )}
-
-    //   <div className="px-24">
-    //     <div
-    //       className="prose"
-    //       dangerouslySetInnerHTML={{
-    //         __html: recruitDetail.body || "",
-    //       }}
-    //     />
-    //   </div>
-
-    //   <Pagination prevId={prevId} nextId={nextId} type="recruit" />
-    // </article>
   );
 };
 
