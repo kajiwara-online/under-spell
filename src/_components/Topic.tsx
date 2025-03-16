@@ -1,6 +1,9 @@
+"use client";
+
 import { Information } from "@/_libs/client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const DEFAULTIMAGE = "/images/default.jpg";
 
@@ -12,18 +15,31 @@ const Topic = ({ articles }: { articles: Information[] }) => {
           TOPICS
         </h2>
         <p>
-          <Link
-            href="/information?category=topic"
-            className="inline-flex items-center flex-row-reverse text-[.6875rem] tracking-[.04em] leading-[1.272727272727273] md:text-[.75rem] md:leading-[1.166666666666667] before:content-[''] before:w-[.4375rem] before:h-[.75rem] before:pb-[48%] before:ml-[.9375rem] before:bg-no-repeat before:bg-center before:bg-contain before:bg-[url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyBoZWlnaHQ9JzEyJyB2aWV3Qm94PScwIDAgNyAxMicgd2lkdGg9JzcnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nbS4zMTggMTAuOTUuNzA3LjcwNyA1LjY1Ny01LjY1Ny01LjY1Ny01LjY1Ny0uNzA3LjcwNyA0Ljk1IDQuOTV6Jy8+PC9zdmc+')]"
-          >
-            All Topics
+          <Link href="/information?category=topic" legacyBehavior passHref>
+            <motion.a
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+              className="inline-flex items-center flex-row-reverse text-[.6875rem] tracking-[.04em] leading-[1.272727272727273] md:text-[.75rem] md:leading-[1.166666666666667] before:content-[''] before:w-[.4375rem] before:h-[.75rem] before:pb-[48%] before:ml-[.9375rem] before:bg-no-repeat before:bg-center before:bg-contain before:bg-[url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyBoZWlnaHQ9JzEyJyB2aWV3Qm94PScwIDAgNyAxMicgd2lkdGg9JzcnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nbS4zMTggMTAuOTUuNzA3LjcwNyA1LjY1Ny01LjY1Ny01LjY1Ny01LjY1Ny0uNzA3LjcwNyA0Ljk1IDQuOTV6Jy8+PC9zdmc+')]"
+            >
+              All Topics
+            </motion.a>
           </Link>
         </p>
       </header>
       <ul className="md:flex md:flex-wrap md:mt-[-6.481481481481481%] md:ml-[-2.777777777777778%]">
         {articles.map((article) => (
-          <li
+          <motion.li
             key={article.id}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            whileHover={{
+              opacity: 0.7,
+              transition: { duration: 0.2 },
+            }}
             className="md:w-[47.2972972972973%] md:mt-[6.306306306306306%] md:ml-[2.702702702702703%]"
           >
             <Link href={`/information/${article.id}`} className="block">
@@ -42,7 +58,7 @@ const Topic = ({ articles }: { articles: Information[] }) => {
                 {article.description}
               </div>
             </Link>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>

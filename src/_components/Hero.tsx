@@ -1,4 +1,6 @@
-// import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
 
 const MAINVISUAL_L = "/images/mainvisual.l.png";
 const MAINVISUAL_M = "/images/mainvisual.m.png";
@@ -10,7 +12,12 @@ interface HeroProps {
 
 const Hero = ({ imageOn = false }: HeroProps) => {
   return (
-    <div className="lg:h-[calc(100vh-5rem)] md:h-[calc(100vh-clamp(3rem,8vw,5rem))] h-[calc(100vh-15vw)] lg:mt-20 md:mt-[clamp(3rem,8vw,5rem)] mt-[15vw]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="lg:h-[calc(100vh-5rem)] md:h-[calc(100vh-clamp(3rem,8vw,5rem))] h-[calc(100vh-15vw)] lg:mt-20 md:mt-[clamp(3rem,8vw,5rem)] mt-[15vw]"
+    >
       {imageOn && (
         <figure className="relative w-full h-full overflow-hidden">
           <picture className="">
@@ -30,7 +37,7 @@ const Hero = ({ imageOn = false }: HeroProps) => {
           </picture>
         </figure>
       )}
-    </div>
+    </motion.div>
   );
 };
 export default Hero;

@@ -21,33 +21,33 @@ const Footer = () => {
           </div>
           <nav className="flex justify-between w-[12.8125rem] md:justify-start md:w-1/2 md:flex-wrap lg:w-auto lg:flex-nowrap">
             <ul className="text-[.75rem] tracking-[.03em] leading-5 text-[#222] pr-[1.5625rem] md:text-[.875rem] md:w-1/2 md:pr-[4.0625rem] lg:pr-[5.625rem] lg:w-auto">
-              <li>
+              <li className="hover:underline">
                 <Link href="/">Salon</Link>
               </li>
-              <li className="mt-[.625rem]">
+              <li className="mt-[.625rem] hover:underline">
                 <Link href="/">Hairmake</Link>
               </li>
-              <li className="mt-[.625rem]">
+              <li className="mt-[.625rem] hover:underline">
                 <Link href="/">Topics</Link>
               </li>
-              <li className="mt-[.625rem]">
+              <li className="mt-[.625rem] hover:underline">
                 <Link href="/">News</Link>
               </li>
             </ul>
             <ul className="text-[#999] text-[.6875rem] tracking-[.06em] leading-[1.272727272727273] pr-[1.5625rem] md:w-1/2 md:pr-[4.0625rem] lg:pr-[9.375rem] lg:w-auto">
-              <li>
+              <li className="hover:underline">
                 <Link href="/">Nail School</Link>
               </li>
-              <li className="mt-[.625rem]">
+              <li className="mt-[.625rem] hover:underline">
                 <Link href="/">Bridal + LIM</Link>
               </li>
-              <li className="mt-[1.25rem]">
+              <li className="mt-[1.25rem] hover:underline">
                 <Link href="/">Company</Link>
               </li>
-              <li className="mt-[.625rem]">
+              <li className="mt-[.625rem] hover:underline">
                 <Link href="/">Overseas</Link>
               </li>
-              <li className="mt-[.625rem]">
+              <li className="mt-[.625rem] hover:underline">
                 <Link href="/">Recruit</Link>
               </li>
             </ul>
@@ -57,17 +57,17 @@ const Footer = () => {
               </div>
               <div>
                 <p>
-                  <Link href="/" className="underline">
+                  <Link href="/" className="underline hover:no-underline">
                     始めてヘアサロンをご利用の方へ
                   </Link>
                 </p>
                 <p className="mt-[.78125rem]">
-                  <Link href="/" className="underline">
+                  <Link href="/" className="underline hover:no-underline">
                     始めてネイル・アイラッシュサロンをご利用の方へ
                   </Link>
                 </p>
                 <p className="mt-[.78125rem]">
-                  <Link href="/" className="underline">
+                  <Link href="/" className="underline hover:no-underline">
                     始めてエスパサロンをご利用の方へ
                   </Link>
                 </p>

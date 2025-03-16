@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -41,37 +42,67 @@ const Header = () => {
 
         <div className="flex justify-between items-center">
           <ul className="hidden text-[.8125rem] tracking-[.03em] leading-[2] mr-[3.375rem] lg:flex">
-            <li>
+            <motion.li
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+            >
               <Link href="/" className="">
                 Home
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+            >
               <Link href="/salons/" className="ml-[2.5rem]">
                 Salon
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+            >
               <Link href="/hairmake/" className="ml-[2.5rem]">
                 Hairmake
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+            >
               <Link href="/information/" className="ml-[2.5rem]">
                 Information
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+            >
               <Link href="/recruit/" className="ml-[2.5rem]">
                 Recruit
               </Link>
-            </li>
+            </motion.li>
           </ul>
-          <Link
-            href="/reserve/"
-            className="flex justify-center items-center md:border md:border-[#ddd] w-full h-auto mr-3 text-[.875rem] tracking-[.02em] leading-[1.142857142857143] md:leading-none md:mr-[3.6875rem] md:w-[8.75rem] md:h-[2.6875rem] md:text-[.8125rem]"
-          >
-            Reservation
+          <Link href="/reserve/" legacyBehavior passHref>
+            <motion.a
+              whileHover={{
+                opacity: 0.7,
+                transition: { duration: 0.2 },
+              }}
+              className="flex justify-center items-center md:border md:border-[#ddd] w-full h-auto mr-3 text-[.875rem] tracking-[.02em] leading-[1.142857142857143] md:leading-none md:mr-[3.6875rem] md:w-[8.75rem] md:h-[2.6875rem] md:text-[.8125rem]"
+            >
+              Reservation
+            </motion.a>
           </Link>
 
           <div className="w-[.9375rem] h-[1rem] cursor-pointer relative">
@@ -127,55 +158,55 @@ const Header = () => {
                         <li>
                           <Link
                             href="/"
-                            className="hidden md:block"
+                            className="hidden md:block hover:underline"
                             onClick={toggleNavbar}
                           >
                             Home
                           </Link>
                         </li>
-                        <li className="m-0 md:mt-5">
+                        <li className="m-0 md:mt-5 hover:underline">
                           <Link href="/salons/" onClick={toggleNavbar}>
                             Salon
                           </Link>
                         </li>
-                        <li className="mt-[.625rem] md:mt-5">
+                        <li className="mt-[.625rem] md:mt-5 hover:underline">
                           <Link href="/hairmake/" onClick={toggleNavbar}>
                             Hairmake
                           </Link>
                         </li>
-                        <li className="mt-[.625rem] md:mt-5">
+                        <li className="mt-[.625rem] md:mt-5 hover:underline">
                           <Link href="/information/" onClick={toggleNavbar}>
                             Information
                           </Link>
                         </li>
-                        <li className="mt-[.625rem] md:mt-5">
+                        <li className="mt-[.625rem] md:mt-5 hover:underline">
                           <Link href="/recruit/" onClick={toggleNavbar}>
                             Recruit
                           </Link>
                         </li>
                       </ul>
                       <ul className="pr-[3.375rem] text-[.6875rem] tracking-[.06em] leading-[1.272727272727273] text-[#999] md:text-[.8125rem] md:tracking-[.06em] md:leading-[1.230769230769231] md:p-0">
-                        <li>
+                        <li className="hover:underline">
                           <Link href="/nailschool/" onClick={toggleNavbar}>
                             Nail School
                           </Link>
                         </li>
-                        <li className="md:mt-3 mt-[.625rem]">
+                        <li className="md:mt-3 mt-[.625rem] hover:underline">
                           <Link href="/bridal/" onClick={toggleNavbar}>
                             Bridal + LIM
                           </Link>
                         </li>
-                        <li className="md:mt-[1.8125rem] mt-5">
+                        <li className="md:mt-[1.8125rem] mt-5 hover:underline">
                           <Link href="/company/" onClick={toggleNavbar}>
                             Company
                           </Link>
                         </li>
-                        <li className="md:mt-3 mt-[.625rem]">
+                        <li className="md:mt-3 mt-[.625rem] hover:underline">
                           <Link href="/overseas/" onClick={toggleNavbar}>
                             Overseas
                           </Link>
                         </li>
-                        <li className="md:mt-[1.8125rem] mt-5">
+                        <li className="md:mt-[1.8125rem] mt-5 hover:underline">
                           <Link href="/policy/" onClick={toggleNavbar}>
                             Privacy policy
                           </Link>
@@ -188,17 +219,29 @@ const Header = () => {
                       </div>
                       <div>
                         <p>
-                          <Link href="/hajimete/" onClick={toggleNavbar}>
+                          <Link
+                            href="/hajimete/"
+                            className="underline hover:no-underline"
+                            onClick={toggleNavbar}
+                          >
                             始めてヘアサロンをご利用の方へ
                           </Link>
                         </p>
                         <p className="mt-[.78125rem] md:mt-[.90625rem]">
-                          <Link href="/hajimete/nail/" onClick={toggleNavbar}>
+                          <Link
+                            href="/hajimete/nail/"
+                            className="underline hover:no-underline"
+                            onClick={toggleNavbar}
+                          >
                             始めてネイル・アイラッシュサロンをご利用の方へ
                           </Link>
                         </p>
                         <p className="mt-[.78125rem] md:mt-[.90625rem]">
-                          <Link href="/hajimete/espa/" onClick={toggleNavbar}>
+                          <Link
+                            href="/hajimete/espa/"
+                            className="underline hover:no-underline"
+                            onClick={toggleNavbar}
+                          >
                             始めてエスパサロンをご利用の方へ
                           </Link>
                         </p>
