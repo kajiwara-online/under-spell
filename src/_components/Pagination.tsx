@@ -10,20 +10,20 @@ const Pagination = ({ prevId, nextId, type }: PaginationProps) => {
     <div className="flex justify-between items-center py-4 border-t mt-8">
       {/* 次の記事 */}
       {nextUrl ? (
-        <Link href={nextUrl} className="text-blue-500 hover:underline">
+        <Link href={nextUrl} className="hover:underline">
           Next
         </Link>
       ) : (
-        <span className="text-gray-400">Next</span>
+        <span></span>
       )}
 
       {/* 前の記事 */}
       {prevUrl ? (
-        <Link href={prevUrl} className="text-blue-500 hover:underline">
+        <Link href={prevUrl} className="hover:underline">
           Prev
         </Link>
       ) : (
-        <span className="text-gray-400">Prev</span>
+        <span></span>
       )}
     </div>
   );

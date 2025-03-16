@@ -1264,7 +1264,7 @@ const CompanyHome = () => {
           <ContactForm />
         </div>
         <div className="row-[2/3] col-[3/4] relative mt-[3.4375rem] lg:m-0">
-          <div className="sticky top-[7.6875rem]">
+          <div className="lg:sticky lg:top-[7.6875rem]">
             <section>
               <header className="text-[0.8125rem] tracking-[.02em] leading-[1.230769230769231] text-[#999] mb-[.75rem] md:mb-[.8125rem]">
                 Contact
@@ -1276,13 +1276,13 @@ const CompanyHome = () => {
                 <div className="mt-[1.875rem]">
                   <Link
                     href="#contact"
-                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[9.375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
+                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
                   >
                     お問い合わせ
                   </Link>
                   <Link
                     href="/overseas/"
-                    className="mt-[1.125rem] h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[9.375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
+                    className="mt-[1.125rem] h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
                   >
                     海外店舗の情報はこちら
                   </Link>
@@ -1300,7 +1300,7 @@ const CompanyHome = () => {
                 <div className="mt-[1.875rem]">
                   <Link
                     href="mailto:info@lessismore.co.jp"
-                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[9.375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
+                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
                   >
                     CONTACT
                   </Link>
@@ -1314,7 +1314,7 @@ const CompanyHome = () => {
                 <div className="mt-[1.875rem]">
                   <Link
                     href="/overseas/"
-                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[9.375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
+                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
                   >
                     OVERSEAS STORES
                   </Link>
@@ -1329,7 +1329,7 @@ const CompanyHome = () => {
                 <div className="mt-[1.875rem]">
                   <Link
                     href="mailto:info@lessismore.co.jp"
-                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[9.375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
+                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
                   >
                     咨询
                   </Link>
@@ -1340,7 +1340,7 @@ const CompanyHome = () => {
                 <div className="mt-[1.875rem]">
                   <Link
                     href="/overseas/"
-                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[9.375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
+                    className="h-[3.9375rem] flex justify-center items-center border border-[#ddd] text-[.9375rem] w-full md:text-[.875rem] md:h-[3.375rem]"
                   >
                     海外門店
                   </Link>
